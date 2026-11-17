@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #car1{
+            width: 250px;
+            position: absolute;
+            margin-left:0px;
+            margin-top:-460PX;
+
+        }
+        #car2{
+            width: 250px;
+            position: absolute;
+           margin-left: 0px;
+           margin-top: -250px;
+        }
+        #zam{
+            margin-top: 250px;
+
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 2500px;background-image: url(zam.jpg); height: 500px;" id="zam"></div>
+    <img src="car1.jpg" id="car1">
+    <img src="car2.jpg"  id="car2">
+    <input type="text" id="command" onkeypress="uraldah(event)" autofocus/>
+
+
+</body>
+<script>
+    let car1 = document.getElementById("car1")
+    let car2 = document.getElementById("car2")
+    let go1 = 0;
+    let go2 = 0;
+    function reset(){
+        go1 = 0;
+        go2 = 0;
+        car1.style.marginLeft = "0px";
+        car2.style.marginLeft = "0px";
+    }
+    function uraldah(event){
+        if(event.key == "d"){
+            go1 += 50;
+            car1.style.marginLeft = go1 + "px";
+        } else if (event.key == "h") {
+            go2 += 50;
+            car2.style.marginLeft = go2 + "px";
+        }
+        if (go1 > 1300) {
+            alert("ehnii mashin hojloo");
+            reset();
+        } else if (go2 > 1300) {
+            alert("hoyrdoh mashin hojloo");
+            reset();
+        }
+    }
+
+</script>
+</html>
